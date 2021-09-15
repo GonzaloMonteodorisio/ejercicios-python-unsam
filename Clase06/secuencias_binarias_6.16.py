@@ -1,0 +1,20 @@
+def incrementar(s):
+    carry = 1
+    l = len(s)
+
+    for i in range(l-1,-1,-1): # (start, stop, step)
+        if (s[i] == 1 and carry == 1):
+            s[i] = 0
+            carry = 1
+        else:
+            s[i] = s[i] + carry
+            carry = 0
+    return s
+
+def main():
+    # incremento = incrementar([0, 0, 0, 0, 0])
+    # incremento = incrementar([0, 0, 1, 1, 0])
+    incremento = incrementar([0, 0, 1, 1, 1])
+    # incremento = incrementar([1, 1, 1, 1, 1])
+    print(incremento)
+# main()
